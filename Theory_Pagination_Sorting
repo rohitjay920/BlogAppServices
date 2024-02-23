@@ -1,0 +1,7 @@
+JpaRepository already extends PagingAndSortingRepository which provides methods to sort the posts and get
+pages based on page numbers and page size.
+
+Page<T> findAll(Pageable pageable); is a method used to get pages based on size and number of pages
+
+Check getAllPost() in post service implementations to see how pagination is achieved.
+

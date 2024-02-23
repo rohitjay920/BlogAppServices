@@ -1,0 +1,32 @@
+ModelMapper is a library that provides the to ablity the convert one object into another
+
+In the current project we are converting entities into dto object to avoid exposing the entities to other layers
+but this becomes a hectic job to do it manually if there are multiple entites and multiple fields in each entity.
+
+To avoid this ModelMapper library will be used.
+
+Steps to use ModelMapper:
+
+1. Search for ModelMapper dependecy in the mvn repository, copy the dependency and paste it in the pom.xml file of 
+	the project.
+	
+2. We need to create a Bean class, annotate with @Configuration, create a non-static method that returns the object
+	of ModelMapper class
+								( OR )
+	create a non-static method with the annotation @Bean that returns the object of ModelMapper class in the project main method class
+	i.e., the class annotated with @SpringBootApplication as this annotation makes the class as spring
+	configuration class.
+	
+3. In the service implementation class create the reference of ModelMapper and annotate with @Autowired for 
+	dependency injection.
+	
+4. In the Model convertion methods that we declared in the service implementation class, use the map method
+	present in ModelMapper class to convert one Model into another.
+	
+	eg: User user = modelMapper.map(userDto,User.class);
+	
+	The map method accepts two parameters: map(Object source, Class destination)
+	1. Object source that we want the convert
+	2. Destination type class
+	
+We can learn how ModelMapper works internally by going to their official site

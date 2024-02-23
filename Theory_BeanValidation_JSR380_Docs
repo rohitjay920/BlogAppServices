@@ -1,0 +1,29 @@
+Java bean is validated with JSR 380 known as Bean Validation 2.0
+
+JSR 380 is a specification for the java API for bean validation where properties of a bean must meet the 
+specific criteria
+
+For validation different annotations are used like @NotNull, @Min, @Size etc.
+
+Hibernate Validator is an implementation of validation api(JSR 380)
+
+Important annotations of bean validation:
+
+1. @NotNull -> To not leave any field as null
+2. @Size -> Provides min and max size constraints to the fields
+3. @NotEmpty -> To not leave any field as empty
+4. @Min and @Max -> To set min and max of a field
+5. @Email -> To validate proper email
+
+How to use Bean validation?
+
+Spring boot provides support for hibernate validator
+
+1. We have to add a dependency called spring-boot-starter-validation 
+2. Add annotations on top of the fields of dto
+3. Add @Valid annotation in the method declaration before accepting json object 
+	@PostMapping("/save")
+eg: public ResponseEntity<UserDto> saveUser(@Valid @RequestBody){
+
+	}
+
